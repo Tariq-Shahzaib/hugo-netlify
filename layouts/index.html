@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>Home</h1>
+<h2>Todo List:</h2>
+<ul>
+    {{ range where .Site.RegularPages "Type" "todos" }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }} - {{ .Params.description }}</a>
+        </li>
+    {{ end }}
+</ul>
+{{ end }}
